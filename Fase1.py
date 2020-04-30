@@ -14,9 +14,10 @@ while valor != 6:
         if valor == 1:
             print("REGISTRO DE ESTUDIANTES")
             for i in range(30):
-                diccionario = input("Agrega un alumno: ")
+                total = i + 1
+                diccionario = input(f"{total}-.Nombre del estudiante: ")
                 diccionario_notas[diccionario] = [None,None,None,None,None]
-            input("")
+            input(f"Se agregaron {total} estudiantes de manera exitosa")
         if valor == 2:
             print(separador1)
             print("CAPTURA DE CALIFICACIONES DE LOS ESTUDIANTES - PROGRAMACION")
