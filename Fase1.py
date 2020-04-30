@@ -1,25 +1,22 @@
 import pandas as pd
 
-diccionario_notas = {"Pepe": [None, None, None, None, None], "Esteban":[None, None, None, None, None], \
-                     "Paola": [None, None, None, None, None], "Ricardo":[None, None, None, None, None], \
-                     "Nicole":[None, None, None, None, None]}
+diccionario_notas = {}
 
 notas_dicc = pd.DataFrame(diccionario_notas)
-notas_dicc.index = ["Programacion","Base de datos", "Macroeconomia","Contabilidad","Creatividad"]
 
 valor = 1
-while valor != 5:
+while valor != 6:
     separador1 = ("-*-*-*-*-*" * 10)
     print(separador1)
-    print("BIENVENIDO \nElige una opcion : \n \n \t 1) ALUMNOS INSCRITOS \n \t 2) CAPTURAR CALIFICACIONES \n \t 3) DESEMPEÑO ALUMNOS \n \t 4) ALUMNOS REPROBADOS \n \t 5) SALIR DEL SISTEMA \n")
+    print("BIENVENIDO \nElige una opcion : \n \n \t 1) REGISTRAR ALUMNOS \n \t 2) CAPTURAR CALIFICACIONES \n \t 3) ALUMNOS INSCRITOS \n \t 4) DESEMPEÑO ALUMNOS \n \t 5) ALUMNOS REPROBADOS \n \t 6) SALIR DEL SISTEMA \n")
     valor = int(input("Accion a realizar: "))
-    if valor < 6 and valor > 0:
+    if valor < 7 and valor > 0:
         if valor == 1:
-            print(separador1)
-            print("NOMBRES DE LOS ESTUDIANTES \n")
-            print(separador1)
-            print(notas_dicc.T)
-            input("Enter para volver al menu")
+            print("REGISTRO DE ESTUDIANTES")
+            for i in range(30):
+                diccionario = input("Agrega un alumno: ")
+                diccionario_notas[diccionario] = [None,None,None,None,None]
+            input("")
         if valor == 2:
             print(separador1)
             print("CAPTURA DE CALIFICACIONES DE LOS ESTUDIANTES - PROGRAMACION")
@@ -52,7 +49,15 @@ while valor != 5:
                 creatividad = int(input(f"Calificacion en CREATIVIDAD de {elemento} :"))
                 notas_dicc.at["Creatividad",elemento] = creatividad
             print(separador1)
+            
         if valor == 3:
+            print(separador1)
+            print("NOMBRES DE LOS ESTUDIANTES REGISTRADOS Y CALIFICACIONES\n")
+            print(separador1)
+            print(notas_dicc.T)
+            input("Enter para volver al menu")
+            
+        if valor == 4:
             print(separador1)
             print("CALIFICACIONES NO APROBATORIAS")
             print(separador1)
@@ -79,7 +84,7 @@ while valor != 5:
             print(f"PROMEDIO GENERAL DE LOS ALUMNOS \n {notas_dicc.mean()}")
             print(separador1)
             input("Enter para volver al menu")
-        if valor == 4:
+        if valor == 5:
             print(separador1)
             print("\tALUMNOS REPROBADOS*")
             reprobadosT = notas_dicc.T[(notas_dicc.T<70)]
@@ -100,7 +105,7 @@ while valor != 5:
             reprobados2 = (notas_dicc.T.std())
             print(reprobados2)
             input("Enter para volver al menu")
-        if valor == 5:
+        if valor == 6:
             print("Saliendo del sistema...")
     else:
         print("XXXXXXXXXXXXXXXXXXX DIGITE UNA OPCION VALIDA XXXXXXXXXXXXXXXXXXX")
