@@ -68,7 +68,7 @@ while valor != 6:
     if valor < 7 and valor > 0:
         if valor == 1:
             print("REGISTRO DE ESTUDIANTES")
-            for i in range(3):
+            for i in range(30):
                 total = i + 1
                 matricula = total
                 diccionario = input(f"Matricula: {total} -Nombre del estudiante: ")
