@@ -14,7 +14,7 @@ while valor != 6:
     if valor < 7 and valor > 0:
         if valor == 1:
             print("REGISTRO DE ESTUDIANTES")
-            for i in range(3):
+            for i in range(30):
                 total = i + 1
                 diccionario = input(f"{total}-.Nombre del estudiante: ")
                 diccionario_notas[diccionario] = [None,None,None,None,None]
